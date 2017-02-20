@@ -8,7 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
-# Use sqlite3 as the database for Active Record
+gem "decent_exposure", "~> 3.0"
+
 gem 'pg', '~> 0.9'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -27,17 +28,18 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+#forms
+gem "simple_form", "~> 3.2.1"
+gem "wicked", "~> 1.3"
+gem 'reform', "~> 2.2.1"
+gem "reform-rails", "~> 0.1.5"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem "rspec", "~> 3.5"
+  gem "rspec-rails", "~> 3.5"
 end
 
 group :development do

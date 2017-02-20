@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: MyString
+  room: MyString
+  table: MyString
+  lamp: MyString
+
+two:
+  customer: MyString
+  room: MyString
+  table: MyString
+  lamp: MyString

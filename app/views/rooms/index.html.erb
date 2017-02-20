@@ -1,0 +1,14 @@
+<section>
+    
+    List of available rooms are as follows:
+    
+    <ul>
+        <% rooms.each do |room| %>
+            <li> <%= link_to room.number, edit_room_path(room) %></li>
+        <% end %>
+    </ul>
+    
+    <div>
+        You can always create one <%= link_to 'here', new_room_path %> 
+    </div>
+</section>

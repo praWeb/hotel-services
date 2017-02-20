@@ -1,0 +1,31 @@
+<div>
+    <%= f.label :occupied %>
+    <%= f.text_field :occupied, required: true %>
+</div>
+<div>
+    <%= f.label :room_type %>
+    <%= f.text_field :room_type, required: true %>
+</div>
+<div>
+    <%= f.label :bed_ids %>
+    <%= f.text_field :bed_ids, required: true %>
+    <%= f.hidden_field :bed_count %>
+</div>
+<div>
+    <%= f.label :table_ids %>
+    <%= f.text_field :table_ids, required: true %>
+    <%= f.hidden_field :table_count %>
+</div>
+<div>
+    <%= f.label :lamp_ids %>
+    <%= f.text_field :lamp_ids, required: true %>
+    <%= f.hidden_field :lamps_count %>
+</div>
+<div>
+    <%= f.label :chair_ids %>
+    <%= f.text_field :chair_ids, required: true %>
+    <%= f.hidden_field :chair_count %>
+</div>
+<div>
+    <%= f.submit 'Create Room' %>
+</div>

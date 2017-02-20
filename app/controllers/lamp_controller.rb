@@ -1,0 +1,2 @@
+class LampController < ApplicationController
+end
