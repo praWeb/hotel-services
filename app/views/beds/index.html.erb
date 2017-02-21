@@ -1,0 +1,14 @@
+<section>
+    <h1>Manage beds of your hotel</h1>
+    <div>
+        <h3>List of bed types and their counts are as follows:</h3>
+        <ul>
+            <% beds.each do |bed| %>
+                <li> <%= link_to bed.bed_type, edit_bed_path(bed) %> : <%= bed.bed_count %></li>
+            <% end %>
+        </ul>
+    </div>
+    <div>
+        Want to add a new one . <%= link_to 'Go Here', new_bed_path %>
+    </div>
+</section>

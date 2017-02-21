@@ -1,0 +1,8 @@
+<section>
+    <h2> Got a new bed type in your hotel, go ahead and add it your database </h2>
+    <div>
+        <%= simple_form_for bed_form, url: url_for(action: :create), as: :bed_form do |f| %>
+            <%= render partial:'beds/partials/form', locals: {f: f} %>
+        <% end %>
+    </div>
+</section>

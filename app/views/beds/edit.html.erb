@@ -1,0 +1,8 @@
+<section>
+    <h2> Feel free to edit the details of your bed types any time </h2>
+    <div>
+        <%= simple_form_for bed_form, url: url_for(controller: :beds, action: :update), as: :bed_form do |f| %>
+            <%= render partial:'beds/partials/form', locals: {f: f} %>
+        <% end %>
+    </div>
+</section>

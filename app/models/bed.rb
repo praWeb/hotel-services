@@ -1,4 +1,7 @@
 class Bed < ApplicationRecord
-    belongs_to :room
+    
+  def available_to_allocate
+      bed_count - in_use
+  end
 
 end

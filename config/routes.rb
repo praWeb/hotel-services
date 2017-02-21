@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root 'home#show'
   
   resources "rooms"
+  resources "beds"
 end
