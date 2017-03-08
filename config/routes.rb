@@ -3,6 +3,15 @@ Rails.application.routes.draw do
   
   root 'home#show'
   
-  resources "rooms"
+  # Custom Paths
+ 
+  # general paths
+  resources "rooms" do
+    member do
+      get :manage, action: :manage_room
+      patch :manage, action: :manage_room
+      
+    end
+  end
   resources "beds"
 end

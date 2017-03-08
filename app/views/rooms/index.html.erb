@@ -4,7 +4,10 @@
     
     <ul>
         <% rooms.each do |room| %>
-            <li> <%= link_to room.number, edit_room_path(room) %></li>
+            <li> 
+                <%= link_to "#{room}", edit_room_path(room) %>
+                <%= link_to "Manage Room", manage_room_path(room) %>
+            </li>
         <% end %>
     </ul>
     

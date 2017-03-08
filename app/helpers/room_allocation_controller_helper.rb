@@ -1,0 +1,2 @@
+module RoomAllocationControllerHelper
+end

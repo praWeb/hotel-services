@@ -1,0 +1,8 @@
+<div>
+    <%= f.label :beds %>
+    <%= f.select(:bed_ids, Bed.all.collect{ |bed| [bed.bed_type, bed.id] }, {prompt: '-select bed type-'}, required: true) %>
+</div>
+
+<div>
+    <%= f.submit 'Save' %>
+</div>

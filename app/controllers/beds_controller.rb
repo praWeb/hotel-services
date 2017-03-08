@@ -40,6 +40,6 @@ class BedsController < ApplicationController
     end
     
     def bed_params
-      params.require(:bed_form).permit(:bed_type, :bed_count, :in_use)
+      params.require(:bed_form).permit(:bed_type, :bed_count, :in_use, :room_id)
     end
 end

@@ -1,0 +1,6 @@
+<section>
+    <h2> Manage the amenities of your room</h2>
+    <%= simple_form_for room_allocation_form, url: url_for(controller:'rooms', action: 'manage_room'), as: :room_allocation_form do |f| %>
+        <%= render partial: 'rooms/partials/room_allocation_form', locals: { f: f} %>
+    <% end %>
+</section>

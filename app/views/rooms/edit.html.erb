@@ -2,7 +2,7 @@
     <h3> Edit room details </h3>
     
     <div>
-        <%= simple_form_for edit_room_form, url: url_for(action: :edit), as: :room_form,
+        <%= simple_form_for room_form, url: url_for(action: :edit), as: :edit_room_form,
                                          data: { "checkdirty": "" } do |f| %>
             <%= render partial: 'rooms/partials/form', locals: { f: f } %>
         <% end %>   
