@@ -1,6 +1,5 @@
 class Bed < ApplicationRecord
-   has_many :room_beds
-  
+
   def available_to_allocate
       bed_count - in_use
   end

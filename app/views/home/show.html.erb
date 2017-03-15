@@ -1,7 +1,19 @@
 <section>
-    <h1>Welcome to Ease services</h1>
-    
-    <div>
-        Experience our platform by having a tour. <a href="/rooms" target="_blank">Start tour</a>
+    <div class="page-header">
+      <h1> Services we provide </h1>
+
+       <ul>
+         <li>
+            <%= link_to 'Room creation', rooms_path %>
+         </li>
+         <li>
+           <!--TODO: have to update this to have a room maitainence-->
+            <%= link_to 'Room maitainence', rooms_path %>
+         </li>
+         <li>
+           <%= link_to 'Beds Creation', beds_path %>
+         </li>
+       </ul>
     </div>
+
 </section>

@@ -1,0 +1,39 @@
+<section class="page-title">
+  <h1> Room Details</h1>
+  <div class="row">
+    <div class="col-sm-2">
+      Room Number:
+    </div>
+    <div class="col-sm-6">
+      <%= room.number %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      Room Occupancy:
+    </div>
+    <div class="col-sm-6">
+      <%= room.occupied %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      Beds Alloted
+    </div>
+    <div class="col-sm-6">
+      <%= room.bed_ids %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      Room Type:
+    </div>
+    <div class="col-sm-6">
+      <%= room.room_type %>
+    </div>
+  </div>
+  <div class="row">
+    <%= link_to 'Edit', edit_room_path(room), class: 'btn btn-primary' %>
+    <%= link_to 'Manage', manage_room_path(room), class: 'btn btn-primary' %>
+  </div>
+</section>

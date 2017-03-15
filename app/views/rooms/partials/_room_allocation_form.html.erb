@@ -1,8 +1,10 @@
-<div>
-    <%= f.label :beds %>
-    <%= f.select(:bed_ids, Bed.all.collect{ |bed| [bed.bed_type, bed.id] }, {prompt: '-select bed type-'}, required: true) %>
+<div class="row">
+    <%= f.label :beds, for: :bed_ids, class: 'col-sm-1 control-input' %>
+    <div class="col-sm-8">
+      <%= f.select(:bed_ids, Bed.all.collect{ |bed| [bed.bed_type, bed.id] },{prompt: '--select bed type--'}, multiple: "multiple", required: true, class: 'form-control') %>
+    </div>
 </div>
 
 <div>
-    <%= f.submit 'Save' %>
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
 </div>

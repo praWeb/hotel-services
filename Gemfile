@@ -15,6 +15,14 @@ gem 'pg', '~> 0.9'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
+#audit trail
+gem "paper_trail", "~> 6.0"
+gem "paper_trail-globalid", "~> 0.2.0"
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -39,7 +47,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem "rspec", "~> 3.5"
-  gem "rspec-rails", "~> 3.5"
+  gem "guard-rspec", "~> 4.7"
 end
 
 group :development do
@@ -47,9 +55,26 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+
+group :test do
+  gem "capybara", "~> 2.12"
+  gem "capybara-webkit", "~> 1.12"
+  gem "capybara-screenshot", "~> 1.0.14", require: false
+  # gem "capybara_objects", "~> 0.1.1"
+  gem "database_cleaner", "~> 1.5.3"
+  gem "webmock", "~> 2.3.2"
+  gem "selenium-webdriver", "~> 3.2"
+  gem "chromedriver-helper", ">= 0.0.8"
+  gem "factory_girl_rails", "~> 4.8.0"
+  gem "factory_girl", "~> 4.8.0"
+  gem "rspec-collection_matchers", "~> 1.1.3"
+  gem "poltergeist", "~> 1.13"
+end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -1,11 +1,12 @@
 <section>
     <h3> Edit room details </h3>
-    
+    <div class="row">
+      <%= link_to 'manage room', manage_room_path(room), class: 'btn btn-primary' %>
+    </div>
     <div>
-        <%= simple_form_for room_form, url: url_for(action: :edit), as: :edit_room_form,
+        <%= simple_form_for room_form, url: url_for(action: :update), as: :room_form,
                                          data: { "checkdirty": "" } do |f| %>
             <%= render partial: 'rooms/partials/form', locals: { f: f } %>
         <% end %>   
     </div>
-    
 </section>

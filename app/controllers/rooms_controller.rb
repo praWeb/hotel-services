@@ -3,8 +3,8 @@ class RoomsController < ApplicationController
     expose(:room_params) { params[:room_form] }
     expose(:room_allocation_params) { params[:room_allocation_form] }
     expose(:room_service) { Rooms::RoomService.new({room: room}) }
-    expose(:room_form) { room_service.initializeCreateForm(room) }
-    expose(:room_allocation_form) {room_service.initializeRoomAllocationForm(room) }
+    expose(:room_form) { room_service.initializeCreateForm }
+    expose(:room_allocation_form) {room_service.initializeRoomAllocationForm }
     expose(:rooms) { Room.all }
     
     def index
@@ -17,8 +17,11 @@ class RoomsController < ApplicationController
     end
     
     def create
-      room_form.save
-      render :index
+      if room_service.save_room(room_form, room_params)
+        render :index
+      else
+        render :edit
+      end
     end
     
     def update
@@ -36,9 +39,9 @@ class RoomsController < ApplicationController
       if params[:room_allocation_form]
         puts room_allocation_params
         if room_service.save_room(room_allocation_form, room_allocation_params)
-          render :index
+          redirect_to(action: :index)
         else
-          render :edit
+          render :manage
         end
       end
     end
@@ -53,6 +56,10 @@ class RoomsController < ApplicationController
     end
     
     def room_allocation_params
-      params.require(:room_allocation_form).permit(:bed_ids)
+      params.require(:room_allocation_form).permit(:bed_ids => [])
+    end
+
+    def room_params
+      params.require(:room_form).permit(:occupied, :number, :room_type)
     end
 end

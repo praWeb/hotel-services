@@ -1,7 +1,7 @@
 module Rooms
     class RoomCreateForm < Reform::Form
         #properties
-        # property :number  #this has to be auto generated
+        property :number
         property :occupied
         property :bed_ids
         property :bed_count
@@ -14,5 +14,7 @@ module Rooms
         property :chair_count
         
         # anything can be empty
+
+
     end
 end

@@ -1,17 +1,22 @@
-<section>
-    
-    List of available rooms are as follows:
-    
-    <ul>
+<section class="page-title">
+
+  <h1> List of available rooms are as follows: </h1>
+
+  <div>
+    <% if !rooms.any? %>
+      <p>
+        OOPS!! Seems you haven't created any rooms yet. Lets try by creating <%= link_to 'one', new_room_path %> .
+      </p>
+    <% else %>
+      <ul>
         <% rooms.each do |room| %>
-            <li> 
-                <%= link_to "#{room}", edit_room_path(room) %>
-                <%= link_to "Manage Room", manage_room_path(room) %>
+            <li>
+              <%= link_to room.number, room_path(room) %>
             </li>
         <% end %>
-    </ul>
-    
-    <div>
-        You can always create one <%= link_to 'here', new_room_path %> 
-    </div>
+      </ul>
+       <p>... create <%= link_to 'more', new_room_path %></p>
+    <% end %>
+  </div>
+
 </section>
